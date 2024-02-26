@@ -41,7 +41,6 @@ Extra dev targets:
     make env-freeze
     ```
 
----
 
 ### Running Main in Docker
 
