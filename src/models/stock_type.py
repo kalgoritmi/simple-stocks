@@ -8,6 +8,10 @@ class StockType(str, Enum):
     """
     Enum representing stock type
     Binary, either COMMON or PREFERRED
+
+    Attributes:
+        COMMON (str)
+        PREFERRED (str)
     """
 
     COMMON = "COMMON"

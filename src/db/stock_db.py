@@ -55,7 +55,12 @@ class _StockDB(Mapping):
         return list(self.__data.values())
 
     def symbols(self) -> List[str | None]:
-        "Get symbols list"
+        """
+        Get symbols list
+        
+        Returns:
+            the list of symbols in stock db (List[str | None])
+        """
         return list(self.__data.keys())
 
     def get_k_random_symbols(self, k: int = 1) -> Stock:
@@ -85,6 +90,9 @@ class StockDB:
     def is_initialized(cls) -> bool:
         """
         Returns true if the singleton has been initialized at least once
+
+        Returns:
+            status of singleton initialization (bool)
         """
         return cls.__instance is not None
 
@@ -95,7 +103,12 @@ class StockDB:
 
     @classmethod
     def symbols(cls) -> List[str | None]:
-        "Get symbols list"
+        """
+        Get symbols list
+        
+        Returns:
+            the list of symbols in stock db (List[str | None])
+        """        "Get symbols list"
         return cls.__instance.symbols()
 
     @classmethod
@@ -111,6 +124,13 @@ class StockDB:
     def create(cls, path: Union[Path, str] | None) -> "StockDB":
         """
         Overrides create with singleton specific logic
+
+        Attributes:
+            cls: the class type
+            path (Path | str | None): patht o teh filename to create the DB from
+        
+        Raises:
+            AssertionError: if callee tried to instantiate more than one instance
         """
         if cls.__instance is not None:
             raise AssertionError(

@@ -23,6 +23,15 @@ def parse_price(value: str) -> PositiveFloat:
     """
     Parse price to positive float
     Mainly used in the main price prompt
+
+    Attributes:
+        value (str): the value to convert
+
+    Raises:
+        ValueError: if price can not be parse to a positive float
+
+    Returns:
+        teh converted price (PositiveFloat)
     """
     try:
         return PositiveFloat(value)
@@ -31,7 +40,15 @@ def parse_price(value: str) -> PositiveFloat:
 
 
 def gen_k_random_trades(k: int = 5) -> Generator[TradeWithTimestamp, None, None]:
-    "Boilerplate random trades generation"
+    """
+    Boilerplate random trades generation
+
+    Attributes:
+        k (int, default: 5): the number of trades to yield
+
+    Yields:
+        a genrator of trades with timestamp
+    """
     def random_timestamp():
         return datetime.now() - timedelta(minutes=randrange(60))
 

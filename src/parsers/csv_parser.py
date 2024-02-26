@@ -20,6 +20,17 @@ class CsvParserMixin:
 
         Requires the `from_fields` class method interface to build a target object
         for each row and yields from a generator expression.
+
+        Attributes:
+            cls (StockDB | TradeDB): expects the interface of either stock or trade db
+            csv_path (Path | str): a pathlib object or an str to the csv file
+        
+        Raises:
+            FileNotFoundError: if the file can not be found
+            AttributeError: if no from_fields factory is implemented
+
+        Returns:
+            Generator object of eitther StockDB or TradeDB
         """
         if isinstance(csv_path, str):
             csv_path = Path(csv_path)

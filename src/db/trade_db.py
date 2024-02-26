@@ -81,6 +81,13 @@ class TradeDB:
     def create(cls, path: Union[Path, str] | None) -> "TradeDB":
         """
         Overrides create with singleton specific logic
+
+        Attributes:
+            cls: the class type
+            path (Path | str | None): patht o teh filename to create the DB from
+        
+        Raises:
+            AssertionError: if callee tried to instantiate more than one instance
         """
         if cls.__instance is not None:
             raise AssertionError(

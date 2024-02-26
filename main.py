@@ -1,5 +1,8 @@
 """
 Entrypoint
+
+Example:
+    python main.py
 """
 
 from src.utilities import gen_k_random_trades, parse_price, STOCKS, TRADES
