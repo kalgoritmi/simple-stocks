@@ -24,4 +24,4 @@ format:
 tests:
 	@. venv/bin/activate && python -m unittest discover -s tests -p 'test_*.py' -v
 
-.PHONY: tests format run-image
+.PHONY: tests run-image
