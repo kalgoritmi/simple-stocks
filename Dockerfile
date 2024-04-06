@@ -2,7 +2,8 @@ FROM python:3.12.2-slim-bullseye
 
 RUN apt update \
     && apt install make -y --no-install-recommends \
-    && apt clean
+    && apt clean \
+    && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /project
 
