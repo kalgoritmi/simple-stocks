@@ -1,6 +1,6 @@
 ## Simple Stocks Project
 
-### Installation
+### Installation (Step by step)
 
 Steps for local installation:
 - Install `python` and `make`, I made use of `python 3.12`, assuming a debian based OS, adjust accorfing to your distribution:
@@ -40,9 +40,7 @@ Extra dev targets:
     ```
     make env-freeze
     ```
-
-
-### Running Main in Docker
+### Single step Installing & Running Main in Docker
 
 Run main interactively:
 
