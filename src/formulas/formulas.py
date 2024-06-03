@@ -29,12 +29,10 @@ class StockScalarFormulasMixin:
         Returns
             the dividend yield of the stock instance for the given price (PostiveFLoat)
         """
-        print(self.type)
         match self.type:
             case StockType.COMMON:
                 return self.last_dividend / price
             case StockType.PREFERRED:
-                print('hye')
                 return (self.par_value * self.fixed_dividend) / price
 
     def pe_ratio(self, price: PositiveFloat) -> Optional[PositiveFloat]:
