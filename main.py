@@ -30,7 +30,6 @@ if __name__ == "__main__":
         except (ValueError, KeyError) as exc:
             print('\n!!! Wrong input:')
             print(f'\tException occured: {exc}')
-            continue
 
     print('\n\nRegistering transactions...')
     print(TRADES)
